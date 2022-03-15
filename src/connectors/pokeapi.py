@@ -51,25 +51,25 @@ class PokeAPI:
         return self.__request("get_pokemons", params)["results"]
 
     
-    def get_pokemon(self, name_or_id: Union[str, int]) -> list:
+    def get_pokemon(self, name_or_id: Union[str, int]) -> Dict:
         if name_or_id is None:
             raise ValueError("You must provide name_or_id!")
         return self.__request("get_pokemons", name_or_id=name_or_id)
 
     
-    def get_pokemon_specie(self, name_or_id: Union[str, int]) -> list:
+    def get_pokemon_specie(self, name_or_id: Union[str, int]) -> Dict:
         if name_or_id is None:
             raise ValueError("You must provide name_or_id!")
         return self.__request("get_pokemon_species", name_or_id=name_or_id)
 
 
-    def get_egg_group(self, name_or_id: Union[str, int]) -> list:
+    def get_egg_group(self, name_or_id: Union[str, int]) -> Dict:
         if name_or_id is None:
             raise ValueError("You must provide name_or_id!")
         return self.__request("get_egg_groups", name_or_id=name_or_id)
         
 
-    def get_pokemon_type(self, name_or_id: Union[str, int]) -> list:
+    def get_pokemon_type(self, name_or_id: Union[str, int]) -> Dict:
         if name_or_id is None:
             raise ValueError("You must provide name_or_id!")
         return self.__request("get_pokemon_types", name_or_id=name_or_id)
