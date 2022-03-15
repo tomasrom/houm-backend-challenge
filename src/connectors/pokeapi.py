@@ -52,6 +52,10 @@ class PokeAPI:
 
     
     def get_pokemon(self, name_or_id: Union[str, int]) -> Dict:
+        """
+        Returns: dict
+        Raises NotFoundID if ...
+        """
         if name_or_id is None:
             raise ValueError("You must provide name_or_id!")
         return self.__request("get_pokemons", name_or_id=name_or_id)
