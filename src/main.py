@@ -56,10 +56,8 @@ def question_3() -> List[int]:
     res = list()
 
     # Get first gen pokemons list (with id <= 151)
-    first_gen_pokemons = set()
     pokemons = pk.get_pokemons(limit=151)
-    for pokemon in pokemons:
-        first_gen_pokemons.add(pokemon["name"])
+    first_gen_pokemons = { pokemon["name"] for pokemon in pokemons }
 
     # Get fighting type pokemons 
     pokemon_type = pk.get_pokemon_type("fighting")
