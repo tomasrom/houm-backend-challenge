@@ -11,7 +11,8 @@ class PokeAPI:
         self.actions = {
             "get_pokemons": "pokemon/",
             "get_egg_groups": "egg-group/",
-            "get_pokemon_species": "pokemon-species/"
+            "get_pokemon_species": "pokemon-species/",
+            "get_pokemon_types": "type/",
         }
 
 
@@ -68,3 +69,7 @@ class PokeAPI:
         return self.__request("get_egg_groups", name_or_id=name_or_id)
         
 
+    def get_pokemon_type(self, name_or_id: Union[str, int]) -> list:
+        if name_or_id is None:
+            raise ValueError("You must provide name_or_id!")
+        return self.__request("get_pokemon_types", name_or_id=name_or_id)
